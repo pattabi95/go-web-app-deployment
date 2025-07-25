@@ -2,10 +2,14 @@ FROM golang:1.21 AS builder
 
 WORKDIR /app
 
+# Copy go.mod and go.sum files first to leverage Docker cache
 COPY go.mod .
 COPY go.sum .
 
 RUN go mod download
+
+# Copy the rest of the application code
+# This assumes your Go application is in the current directory
 
 COPY . .
 
