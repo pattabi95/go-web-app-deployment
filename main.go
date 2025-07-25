@@ -58,9 +58,12 @@ func contactHandler(w http.ResponseWriter, r *http.Request) {
     renderTemplate(w, "contact.html", profile)
 }
 
-func renderTemplate(w http.ResponseWriter, tmpl string, data interface{}) {
-    err := templates.ExecuteTemplate(w, tmpl, data)
+templates = template.Must(template.ParseGlob("templates/*.html"))
+
+func homeHandler(w http.ResponseWriter, r *http.Request) {
+    err := templates.ExecuteTemplate(w, "layout", profile)
     if err != nil {
+        log.Printf("Template error: %v", err)
         http.Error(w, err.Error(), http.StatusInternalServerError)
     }
 }
