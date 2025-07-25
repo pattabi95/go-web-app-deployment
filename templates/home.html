@@ -1,7 +1,6 @@
-{{ define "home.html" }}
-{{ template "layout.html" . }}
-    {{ define "title" }}Home - Pattabi Raman{{ end }}
-    {{ define "body" }}
+{{ define "home" }}
+    {{ block "title" . }}Home - Pattabi Raman{{ end }}
+    {{ block "body" . }}
     <div class="row">
         <div class="col-md-4 text-center">
             <img src="/static/avatar.png" alt="Profile Photo" class="img-thumbnail mb-3" style="width: 150px;">
