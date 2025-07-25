@@ -6,10 +6,10 @@
             <img src="/static/avatar.png" alt="Profile Photo" class="img-thumbnail mb-3" style="width: 150px;">
         </div>
         <div class="col-md-8">
-            <h2>{{ .Name }}</h2>
-            <h4 class="text-secondary">{{ .Title }}</h4>
-            <p>{{ .Location }}</p>
-            <p>{{ .Summary }}</p>
+            <h2>{{ .Profile.Name }}</h2>
+            <h4 class="text-secondary">{{ .Profile.Title }}</h4>
+            <p>{{ .Profile.Location }}</p>
+            <p>{{ .Profile.Summary }}</p>
             <a class="btn btn-primary" href="{{ .LinkedIn }}" target="_blank">View LinkedIn Profile</a>
         </div>
     </div>
